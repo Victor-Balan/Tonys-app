@@ -1,112 +1,95 @@
 <template>
 
   <div>
-
     <nav class="navbar" role="navigation" aria-label="main navigation">
 
-        <div class="navbar-brand">
+      <div class="navbar-brand">
 
-          <figure class="image is-64x64 m-1">
-            <img class="is-rounded" :src="tonysLogo">
-          </figure>
+        <figure class="image is-64x64 m-1">
+          <img class="is-rounded" :src="tonysLogo">
+        </figure>
 
-          <a role="button" id="burger" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" v-on:click="burgerbtnTog">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+        <a role="button" id="burger" class="navbar-burger" aria-label="menu" aria-expanded="false"
+          data-target="navbarBasicExample" @click="burgerbtnTog">
+          <div class="m-3">
+            <ion-icon class="m-1" id="burgericon" name="rocket-outline"></ion-icon>
+          </div>
+        </a>
+
+      </div>
+      <div id="burgerbtnMenu" class="navbar-menu" role="menu">
+        <div class="navbar-start">
+          <a class="navbar-item" :href="homePage">
+              <router-link to="/">Home</router-link>
           </a>
-                
-        </div>
-        <!-- <a id="darkMode" class="mt-2 mr-4">
-                   <h2>Try dark mode!</h2>
-                </a>
 
-                <a class="mt-2 mr-4">
-                  <label class="switch">
-                      <input type="checkbox">
-                      <span class="slider round" v-on:click="darkMode" ></span>
-                  </label>
-                </a> -->
-                 <div id="burgerbtnMenu" class="navbar-menu">
-                  <div class="navbar-start">
-                    <a class="navbar-item" :href="homePage">
-                      Home
-                    </a>
+          <hr class="dropdown-divider">
+          <a class="navbar-item" :href="officalWebsite">
+            Official Website
+          </a>
 
-                    <a class="navbar-item" :href="officalWebsite">
-                      Official Website
-                    </a>
+          <hr class="dropdown-divider">
+          <a class="navbar-item">
+            <router-link to="/order">Order</router-link>
+          </a>
 
-                    <div class="navbar-item has-dropdown is-hoverable">
-                      <a class="navbar-link">
-                        Follow Us!
-                      </a>
-
-                      <div id="smMenu" class="navbar-dropdown">
-                        <a class="navbar-item" :href="fb">
-                          Facebook
-                        </a>
-                        <a class="navbar-item" :href="igella">
-                          Instagram HTX
-                        </a>
-                        <a class="navbar-item" :href="igkaty">
-                          Instagram KTX
-                        </a>
-
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="navbar-end">
-                    <div class="navbar-item">
-                      <div class="buttons">
-                        <a class="button is-primary">
-                          <strong>Sign up</strong>
-                        </a>
-                        <a class="button is-light">
-                          Log in
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+          
+          <hr class="dropdown-divider">
+          <div role="button" id="socialBtn" class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Menus
+            </a>
+                <hr class="dropdown-divider">
+                <div id="smMenu" class="navbar-dropdown">
+                  <a class="navbar-item">
+                   <router-link to="/tmr">Tony's Mexican Restaurant</router-link> 
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a class="navbar-item">
+                    <router-link to="/ttmx">Tony's Tex-Mex</router-link>
+                  </a>
                 </div>
-    </nav>
+          </div>
 
-    <div id="welcomecardContainer">
-      <div id="welcomeCard" class="card">
-        <header class="card-header">
-          <p class="card-header-title is-justify-content-center is-size-1-desktop is-size-4-mobile">
-            Welcome to Tony's Web-App!
-          </p>
-        </header>
-        <div class="card-content">
-          <div class="content has-text-centered is-size-4-desktop">
-            This is a web app where you can order from the menu! Just type your name, number, and your order!
+          <hr class="dropdown-divider">
+          <div role="button" id="socialBtn" class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Follow Us!
+            </a>
+            
+            <hr class="dropdown-divider">
+            <div id="smMenu" class="navbar-dropdown">
+              <a class="navbar-item" :href="fb">
+                <i class="fab fa-facebook-f mr-2"></i>
+                Facebook
+              </a>
+
+
+              <hr class="dropdown-divider">
+              <a class="navbar-item" :href="igella">
+                <i class="fab fa-instagram mr-2"></i>
+                Instagram HTX
+              </a>
+
+
+              <hr class="dropdown-divider">
+              <a class="navbar-item" :href="igkaty">
+                <i class="fab fa-instagram mr-2"></i>
+                Instagram KTX
+              </a>
+            </div>
           </div>
         </div>
+
       </div>
-   </div>
-   <!-- Customer info -->
-   <div id="welcomecardContainer" class="mb-3">
-     <div class="field">
-       <label class="label" style="color: rgb(187, 122, 2)">Name</label>
-       <div class="control">
-         <input class="input" type="text" placeholder="Text input">
-       </div>
-     </div>
+    </nav>
 
-     <div class="field">
-       <label class="label" style="color: rgb(187, 122, 2)">Number</label>
-       <div class="control">
-         <input class="input" type="text" placeholder="Text input">
-       </div>
-     </div>
-
-   </div>
 
     
+
   </div>
 
+<router-view/>
 </template>
 
 <script>
@@ -115,7 +98,7 @@ export default {
   data() {
     return {
       tonysLogo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuySKoLqPsH_XSitPTxr88W7kEWtmzooiwgw&usqp=CAU',
-      homePage: 'http://localhost:8080',
+      homePage: '/',
       officalWebsite: 'https://www.tonysmexrestaurant.com/',
       fb: 'https://www.facebook.com/TonysMexRest/',
       igella: 'https://www.instagram.com/tonysmexrestaurant/',
@@ -125,12 +108,10 @@ export default {
   },
     methods: {
         burgerbtnTog() {
-           const navbarMenu = document.querySelector('#burgerbtnMenu');
-
+           const navbarMenu = document.querySelector('.navbar-menu');
             navbarMenu.classList.toggle('is-active')
-            document.getElementById("burgerbtnMenu")
-
-        }
+            document.getElementsByClassName("navbar-menu")
+        },
     }
 }
 
@@ -138,38 +119,57 @@ export default {
 
 <style>
 
-html {
-  background-color: rgb(20, 29, 49);
-}
 
 .navbar {
   background-color: rgb(187, 122, 2);
 }
-
+#burgericon {
+  width: 30px;
+  height: 30px;
+}
 #smMenu {
   color: rgb(20, 29, 49) ;
 }
 
-
-
 @media only screen and (min-width: 1024px) {
+
+  #burgerbtnMenu a {
+  color: rgb(32, 47, 78);
+  }
   #welcomecardContainer {
     margin-top: 7%;
     margin-left: 30%;
     margin-right: 30%;
   }
 }
-
 @media only screen and (max-width: 1024px) {
-  #welcomecardContainer {
-    margin-top: 7%;
-    margin-left: 12%;
-    margin-right: 12%;
-  }
-}
 
-#burgerbtnMenu a {
-  color: rgb(32, 47, 78);
+  /* NAVBAR */
+  .navbar-menu {
+    display: block;
+    opacity: 0;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: 50%;
+    
+    transform: translateY(-2%);
+    transition: all .2s ease-in-out;
+    pointer-events: none;
+  }
+  #burgerbtnMenu, #burgerbtnMenu a {
+    background-color: rgb(143, 93, 0);
+    color: white
+  }
+  .navbar-menu.is-active {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    margin-left: 50%;
+    border-radius: 5px 0px 0px 10px;
+
+  }
 }
 
  /* The switch - the box around the slider */
