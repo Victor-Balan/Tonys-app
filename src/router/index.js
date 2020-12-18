@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Orderview from "../views/Orderview.vue";
-import Tonysmexrest from "../views/Tonysmexrest.vue"
-import Tonystexmex from "../views/Tonystexmex.vue"
+import Tonysmexrest from "../views/Tonysmexrest.vue";
+import Tonystexmex from "../views/Tonystexmex.vue";
 
 const routes = [
   {
@@ -24,7 +24,7 @@ const routes = [
     path: "/ttmx",
     name: "Tonystexmex",
     component: Tonystexmex
-  },
+  }
 ];
 
 const router = createRouter({

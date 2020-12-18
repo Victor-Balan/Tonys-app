@@ -1,21 +1,18 @@
 <template>
   <div>
-    <Order/>
+    <Order />
   </div>
 </template>
 
 <script>
-import Order from '@/components/Order.vue';
+import Order from "@/components/Order.vue";
 
 export default {
   name: "Orderview",
   components: {
-      Order
+    Order
   }
 };
 </script>
 
-<style>
- 
-
-</style>
+<style></style>
