@@ -1,3 +1,12 @@
+
+
+12/19/2020 @ 1:51AM
+v1.5.5
+Added this app.get to the server.js file. Refresh bug fix attempt 3
+--->  app.get(/.*/, function(req, res) {
+  res.sendFile(__dirname + "/dist/index.html");
+});
+-------------------------------------------
 12/18/2020 @ 9:23PM
 v1.5.4
 Heroku server modifications. Added static.json. Refresh bug fix attempt 2
