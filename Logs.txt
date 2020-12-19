@@ -1,0 +1,17 @@
+12/18/2020 @ 9:23PM
+v1.5.4
+Heroku server modifications. Added static.json. Refresh bug fix attempt 2
+-------------------------------------------
+12/18/2020 @ 5:49PM
+v1.5.3
+Modified server.js file again. Undeclared const variable. 
+  ---> const history = require('connect-history-api-fallback');
+-------------------------------------------
+12/18/2020 @ 5:37PM
+v1.5.2
+So attempt failed. Restoring server.js file to its initial state.
+-------------------------------------------
+12/18/2020 @ 5:08PM
+v1.5 
+Refresh page "Cannot GET" bug fix attempt 1
+-------------------------------------------
