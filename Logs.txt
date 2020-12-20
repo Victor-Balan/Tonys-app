@@ -1,5 +1,9 @@
-
-
+12/20/2020 @ 2:56AM
+v1.6
+✔ Fixed refresh bug
+✔ Added OrderPlaced.vue View
+✔ Added order review modal card
+-------------------------------------------
 12/19/2020 @ 1:51AM
 v1.5.5
 Added this app.get to the server.js file. Refresh bug fix attempt 3

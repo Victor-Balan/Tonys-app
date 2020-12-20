@@ -57,14 +57,71 @@
           </div>
         </div>
       </div>
-      <!-- PLace order -->
+      <!-- Place order -->
       <div class="buttons mt-6">
-        <button id="orderSubmit" class="button" @click="usertoMongo">
+        <button id="ordertoReivew" class="button" @click="orderReviewBtn">
           Order!
         </button>
       </div>
+      <!-- Review Order -->
+      <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card" id="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Order Review, Everything look good?</p>
+            <button
+              class="delete"
+              aria-label="close"
+              @click="changeOrderBtn"
+            ></button>
+          </header>
+          <section class="modal-card-body">
+            <figure class="image is-64x64 ">
+              <img class="is-rounded" :src="tonysLogo" />
+            </figure>
+            <div class="mt-4 ml-4">
+              <ul class="modalreviewBody">
+                <li class="has-text-weight-bold">
+                  Name:
+                </li>
+                <a>{{ User.firstname }}</a>
+                <hr class="dropdown-divider" />
+
+                <li class="has-text-weight-bold">
+                  Number:
+                </li>
+                <a>{{ User.number }}</a>
+                <hr class="dropdown-divider" />
+
+                <li class="has-text-weight-bold">
+                  Food:
+                </li>
+                <a>{{ User.lunch }}</a>
+                <hr class="dropdown-divider" />
+
+                <li class="has-text-weight-bold">
+                  Drink:
+                </li>
+                <a>{{ User.drink }}</a>
+                <hr class="dropdown-divider" />
+              </ul>
+            </div>
+          </section>
+          <footer class="modal-card-foot">
+            <button id="orderSubmit" class="button" style="color: white">
+              <router-link to="/orderplaced" style="color: white"
+                >Place Order</router-link
+              >
+            </button>
+            <button id="changeOrder" class="button" @click="changeOrderBtn">
+              Change
+            </button>
+          </footer>
+        </div>
+      </div>
     </div>
   </div>
+  <router-view />
 </template>
 
 <script>
@@ -72,6 +129,8 @@ export default {
   name: "Order",
   data() {
     return {
+      tonysLogo:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuySKoLqPsH_XSitPTxr88W7kEWtmzooiwgw&usqp=CAU",
       User: {
         firstname: "",
         number: "",
@@ -89,14 +148,25 @@ export default {
         event.preventDefault();
       }
     },
-    usertoMongo() {
+    orderReviewBtn() {
       const customer = {
         firstname: this.User.firstname,
         number: this.User.number,
         lunch: this.User.lunch,
         drink: this.User.drink
       };
-      console.log(customer);
+      const reviewbtn = document.querySelector(".modal");
+      reviewbtn.classList.toggle("is-active");
+      document.getElementsByClassName("modal");
+
+      console.log(customer, "the modal works");
+    },
+    changeOrderBtn() {
+      const reviewbtn = document.querySelector(".modal");
+      reviewbtn.classList.toggle("is-active");
+      document.getElementsByClassName("modal");
+
+      console.log("button works, changing order...");
     }
   }
 };
@@ -123,9 +193,18 @@ export default {
   border-width: 2px;
   border-color: rgb(235, 189, 130);
 }
+#ordertoReivew,
 #orderSubmit {
   background-color: rgb(235, 189, 130);
   border-width: 0px;
+}
+#ordertoReivew:hover,
+#orderSubmit:hover {
+  background-color: rgb(199, 130, 3);
+  border-width: 0px;
+}
+.modalreviewBody a {
+  color: rgb(187, 122, 2);
 }
 @media only screen and (min-width: 1024px) {
   #userInput {
@@ -139,6 +218,15 @@ export default {
     margin-top: 20%;
     margin-left: 12%;
     margin-right: 20%;
+  }
+  .modal {
+    margin: 5%;
+  }
+  .modal-background {
+    background-color: rgba(128, 128, 128, 0);
+  }
+  .modal-card-head p {
+    font-size: 17px;
   }
 }
 </style>

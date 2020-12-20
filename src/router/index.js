@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Orderview from "../views/Orderview.vue";
 import Tonysmexrest from "../views/Tonysmexrest.vue";
 import Tonystexmex from "../views/Tonystexmex.vue";
+import OrderPlaced from "../views/OrderPlaced.vue";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: "/ttmx",
     name: "Tonystexmex",
     component: Tonystexmex
+  },
+  {
+    path: "/orderplaced",
+    name: "OrderPlaced",
+    component: OrderPlaced
   }
 ];
 
