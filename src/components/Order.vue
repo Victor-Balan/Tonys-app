@@ -97,7 +97,9 @@
               style="color: black"
               @click="orderPlaced"
             >
-              Place Order
+              <router-link to="/orderplaced" class="has-text-black">
+                Place Order</router-link
+              >
             </button>
             <button id="changeOrder" class="button" @click="changeOrderBtn">
               Change

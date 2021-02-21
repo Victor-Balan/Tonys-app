@@ -9,11 +9,14 @@
     <div class="modal-background"></div>
     <div class="m-5">
       <div class="modal-card" id="tmrModalCard">
-        <header class="modal-card-head">
+        <header
+          class="modal-card-head"
+          style="background-color: rgb(187, 122, 2)"
+        >
           <p class="modal-card-title"></p>
         </header>
         <section class="modal-card-body">
-          <div>
+          <div id="test1">
             <!-- Tony's Mexican Restaurant menu -->
             <div id="showMenus1">
               <div class="tmrMenu">
@@ -31,7 +34,10 @@
             </div>
           </div>
         </section>
-        <footer class="modal-card-foot">
+        <footer
+          class="modal-card-foot p-1"
+          style="background-color: rgb(187, 122, 2)"
+        >
           <button class="button" @click="toggleMenu1">Close</button>
         </footer>
       </div>
@@ -75,8 +81,6 @@ export default {
 @media only screen and (min-width: 1024px) {
   .tmrMenu {
     margin-top: -1%;
-    margin-left: 1%;
-    margin-right: 1%;
   }
   #tmrModalCard {
     width: 90%;
@@ -87,12 +91,13 @@ export default {
 @media only screen and (max-width: 770px) {
   .tmrMenu {
     margin-top: -1%;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin-left: -4%;
+    margin-right: -4%;
   }
   #tmrModalCard {
     margin-top: 3%;
     margin-left: 0%;
+    padding-bottom: 20%;
   }
 }
 </style>

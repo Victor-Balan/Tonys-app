@@ -9,7 +9,10 @@
     <div class="modal-background"></div>
     <div class="m-5">
       <div class="modal-card" id="ttmxModalCard">
-        <header class="modal-card-head">
+        <header
+          class="modal-card-head"
+          style="background-color: rgb(187, 122, 2)"
+        >
           <p class="modal-card-title"></p>
         </header>
         <section class="modal-card-body">
@@ -25,14 +28,19 @@
               <div class="ttmxMenu">
                 <img :src="ttmxMenu3" />
               </div>
-              <div class="ttmxMenu" style="margin-bottom: 2%;">
+              <div class="ttmxMenu">
                 <img :src="ttmxMenu4" />
               </div>
             </div>
           </div>
         </section>
-        <footer class="modal-card-foot">
-          <button class="button" @click="toggleMenu2">Close</button>
+        <footer
+          class="modal-card-foot p-1"
+          style=" border-width: 0px; background-color: rgb(187, 122, 2)"
+        >
+          <button class="button" id="closeMenu2" @click="toggleMenu2">
+            Close
+          </button>
         </footer>
       </div>
     </div>
@@ -75,8 +83,6 @@ export default {
 @media only screen and (min-width: 1024px) {
   .ttmxMenu {
     margin-top: -1%;
-    margin-left: 1%;
-    margin-right: 1%;
   }
   #ttmxModalCard {
     width: 80%;
@@ -85,12 +91,13 @@ export default {
 @media only screen and (max-width: 770px) {
   .ttmxMenu {
     margin-top: -1%;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin-left: -4%;
+    margin-right: -4%;
   }
   #ttmxModalCard {
     margin-top: 3%;
     margin-left: 0%;
+    padding-bottom: 20%;
   }
 }
 </style>

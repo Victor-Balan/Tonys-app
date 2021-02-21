@@ -1,4 +1,9 @@
 02/13/2021 @ 6:46PM
+v1.8
+✔ Changed Menu1 and Menu2 modal color scheme
+✔ Resized menu image on both Menu1 and Menu2 modals
+-------------------------------------------
+02/13/2021 @ 6:46PM
 v1.7
 ✔ Added menu modals on Order view
 ✔ Changed NOTES textarea font color: lime green
